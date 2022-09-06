@@ -1,0 +1,21 @@
+@startuml
+'https://plantuml.com/class-diagram
+
+class Stack {
+data any[]
+count number
+
+push() 入栈
+pop() 出栈
+top() 获取栈顶值
+size() 获取栈元素个数
+clear() 清空栈
+}
+'
+'enum TimeUnit {
+'DAYS
+'HOURS
+'MINUTES
+'}
+
+@enduml
