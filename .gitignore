@@ -9,7 +9,7 @@ npm-debug.log*
 yarn-error.log
 
 
-#/coverage
+/coverage
 .idea
 .vscode
 #yarn.lock
