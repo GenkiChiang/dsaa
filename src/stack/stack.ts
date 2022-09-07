@@ -8,7 +8,7 @@ export class Stack<T = any> {
   }
   pop(): T {
     if (this.isEmpty()) {
-      return;
+      return ;
     }
     const temp = this.data[this.count - 1];
     delete this.data[this.count - 1];
