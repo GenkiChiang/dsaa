@@ -1,0 +1,17 @@
+@startuml
+
+class Queue {
+queue 队列
+count
+head
+
+enQueue() 入队
+deQueue() 出队
+top() 获取队列第一个
+clear()
+size()
+empty()
+}
+@enduml
+
+

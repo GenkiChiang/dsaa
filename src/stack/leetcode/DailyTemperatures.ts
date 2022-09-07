@@ -1,4 +1,4 @@
-import { Stack } from "./stack";
+import { Stack } from "../Stack";
 
 // 每日温度
 //
@@ -24,7 +24,7 @@ import { Stack } from "./stack";
 // 1 <= temperatures.length <= 105
 // 30 <= temperatures[i] <= 100
 
-export const dailyTemperaturesByLoop = (temperatures: number[]): number[] => {
+export const dailyTemperaturesBasedLoop = (temperatures: number[]): number[] => {
   const size = temperatures.length;
   const answer = [];
   let value;
@@ -59,14 +59,14 @@ export const dailyTemperaturesByLoop = (temperatures: number[]): number[] => {
   return answer;
 };
 
-export const dailyTemperaturesByStack = (temperatures: number[]) => {
+export const dailyTemperaturesBasedStack = (temperatures: number[]) => {
   const stack = new Stack<number>();
   const size = temperatures.length;
   const answer = new Array(size).fill(0);
   let index = 0;
   while (index < size) {
     while (
-      !stack.isEmpty() &&
+      !stack.empty() &&
       temperatures[index] > temperatures[stack.top()]
     ) {
       answer[stack.top()] = index - stack.pop();

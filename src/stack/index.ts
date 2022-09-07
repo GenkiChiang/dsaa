@@ -1,3 +1,3 @@
 export * from "./stack";
-export * from "./minStack";
-export  * from './dailyTemperatures'
+export * from "./leetcode/MinStack";
+export  * from './leetcode/DailyTemperatures'

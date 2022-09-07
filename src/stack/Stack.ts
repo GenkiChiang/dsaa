@@ -2,13 +2,14 @@ export class Stack<T = any> {
   private data: Iterable<T> = [];
   private count = 0;
   constructor() {}
+
   push(item: T) {
     this.data[this.count] = item;
     this.count++;
   }
   pop(): T {
-    if (this.isEmpty()) {
-      return ;
+    if (this.empty()) {
+      return null;
     }
     const temp = this.data[this.count - 1];
     delete this.data[this.count - 1];
@@ -17,7 +18,7 @@ export class Stack<T = any> {
     return temp;
   }
   top(): T {
-    if (this.isEmpty()) {
+    if (this.empty()) {
       return null;
     }
     return this.data[this.count - 1];
@@ -33,7 +34,7 @@ export class Stack<T = any> {
     }
   }
 
-  isEmpty() {
+  empty() {
     return this.count === 0;
   }
 }

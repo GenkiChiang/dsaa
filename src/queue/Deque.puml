@@ -1,0 +1,24 @@
+@startuml
+
+class Deque {
+queue 队列
+count
+head
+
+
+addFront() 头部入队
+addBack() 尾部入队
+
+removeFront() 头部出队
+removeBack() 尾部出队
+
+frontTop() 获取队尾
+backTop() 获取队尾
+
+clear()
+size()
+empty()
+}
+@enduml
+
+

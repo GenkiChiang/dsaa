@@ -1,4 +1,4 @@
-import { Stack } from "./stack";
+import { Stack } from "../Stack";
 // 栈的最小值
 // 定义栈的数据结构，请在该类型中实现一个能够得到栈的最小元素的 min 函数在该栈中，调用 min、push 及 pop 的时间复杂度都是 O(1)。
 //
@@ -23,16 +23,19 @@ import { Stack } from "./stack";
 export class MinStack extends Stack<number> {
   private minStack = new Stack<number>();
 
+  constructor() {
+    super();
+  }
   push(item: number) {
     super.push(item);
 
-    if (this.minStack.isEmpty() || this.min() >= item) {
+    if (this.minStack.empty() || this.min() >= item) {
       this.minStack.push(item);
     }
   }
 
   pop(): number {
-    if (this.isEmpty()) {
+    if (this.empty()) {
       return;
     }
     const temp = super.pop();
