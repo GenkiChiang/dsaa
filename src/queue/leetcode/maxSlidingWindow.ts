@@ -46,7 +46,7 @@ const maxSlidingWindow = (nums: number[], k: number): number[] => {
   for (; index < nums.length; index++) {
     const num = nums[index];
 
-    while (!deque.empty() && nums[deque.backTop()] < num) {
+    while (!deque.isEmpty() && nums[deque.backTop()] < num) {
       deque.removeBack();
     }
     deque.addBack(index);

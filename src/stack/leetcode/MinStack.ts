@@ -29,13 +29,13 @@ export class MinStack extends Stack<number> {
   push(item: number) {
     super.push(item);
 
-    if (this.minStack.empty() || this.min() >= item) {
+    if (this.minStack.isEmpty() || this.min() >= item) {
       this.minStack.push(item);
     }
   }
 
   pop(): number {
-    if (this.empty()) {
+    if (this.isEmpty()) {
       return;
     }
     const temp = super.pop();

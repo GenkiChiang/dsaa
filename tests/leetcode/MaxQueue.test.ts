@@ -1,4 +1,4 @@
-import { MaxQueue } from "../../src/queue/leetcode/MaxQueue";
+import {MaxQueue} from "../../src";
 
 const testCase = {
   action: [

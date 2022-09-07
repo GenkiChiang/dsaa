@@ -31,7 +31,7 @@ export class MaxQueue extends Queue<number> {
   deque = new Deque<number>();
 
   max_value(): number {
-    if (this.empty()) {
+    if (this.isEmpty()) {
       return -1;
     }
     return this.deque.frontTop();
@@ -41,7 +41,7 @@ export class MaxQueue extends Queue<number> {
 
     let dequeMin = this.deque.backTop();
 
-    while (value > dequeMin && !this.deque.empty()) {
+    while (value > dequeMin && !this.deque.isEmpty()) {
       dequeMin = this.deque.removeBack();
     }
 
@@ -49,14 +49,14 @@ export class MaxQueue extends Queue<number> {
   }
 
   pop_front(): number {
-    if (this.empty()) {
+    if (this.isEmpty()) {
       return -1;
     }
     const temp = this.deQueue();
 
     const dequeMax = this.deque.frontTop();
 
-    if (dequeMax === temp && !this.deque.empty()) {
+    if (dequeMax === temp && !this.deque.isEmpty()) {
       this.deque.removeFront();
     }
 

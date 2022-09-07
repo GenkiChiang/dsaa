@@ -16,7 +16,7 @@ export class Deque<T = any> {
   }
 
   removeFront() {
-    if (this.empty()) {
+    if (this.isEmpty()) {
       return null;
     }
     const temp = this.queue[this.head];
@@ -24,7 +24,7 @@ export class Deque<T = any> {
     return temp;
   }
   removeBack() {
-    if (this.empty()) {
+    if (this.isEmpty()) {
       return null;
     }
     const temp = this.queue[this.count - 1];
@@ -33,13 +33,13 @@ export class Deque<T = any> {
   }
 
   frontTop() {
-    if (this.empty()) {
+    if (this.isEmpty()) {
       return null;
     }
     return this.queue[this.head];
   }
   backTop() {
-    if (this.empty()) {
+    if (this.isEmpty()) {
       return null;
     }
     return this.queue[this.count - 1];
@@ -53,7 +53,7 @@ export class Deque<T = any> {
     this.count = 0;
     this.head = 0;
   }
-  empty() {
+  isEmpty() {
     return this.length() === 0;
   }
 

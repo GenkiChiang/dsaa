@@ -66,7 +66,7 @@ export const dailyTemperaturesBasedStack = (temperatures: number[]) => {
   let index = 0;
   while (index < size) {
     while (
-      !stack.empty() &&
+      !stack.isEmpty() &&
       temperatures[index] > temperatures[stack.top()]
     ) {
       answer[stack.top()] = index - stack.pop();

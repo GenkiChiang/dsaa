@@ -1,0 +1,28 @@
+@startuml
+class Node {
+    value
+    next
+}
+class LinkedList {
+    first
+    last
+    count
+
+
+    push()
+    unshift()
+    insertAt()
+
+    pop()
+    shift()
+    removeAt()
+
+    getHead()
+    getLast()
+
+
+    size()
+    clear()
+    isEmpty()
+}
+@enduml

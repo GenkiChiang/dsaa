@@ -17,7 +17,7 @@ backTop() 获取队尾
 
 clear()
 size()
-empty()
+isEmpty()
 }
 @enduml
 

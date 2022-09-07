@@ -7,13 +7,13 @@ it("test Queue", () => {
 
   expect(queue.size()).toEqual(0);
   expect(queue.top()).toBeNull();
-  expect(queue.empty()).toBeTruthy();
+  expect(queue.isEmpty()).toBeTruthy();
 
   queue.enQueue(str1);
   queue.enQueue(str2);
   queue.enQueue(str3);
 
-  expect(queue.empty()).toBeFalsy();
+  expect(queue.isEmpty()).toBeFalsy();
   expect(queue.size()).toEqual(3);
   expect(queue.top()).toEqual(str1);
   expect(queue.deQueue()).toEqual(str1);
@@ -21,5 +21,5 @@ it("test Queue", () => {
   expect(queue.deQueue()).toEqual(str2);
 
   queue.clear();
-  expect(queue.empty()).toBeTruthy();
+  expect(queue.isEmpty()).toBeTruthy();
 });

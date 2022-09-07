@@ -10,7 +10,7 @@ deQueue() 出队
 top() 获取队列第一个
 clear()
 size()
-empty()
+isEmpty()
 }
 @enduml
 

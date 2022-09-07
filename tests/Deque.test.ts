@@ -8,13 +8,13 @@ it("test Deque", () => {
   expect(queue.size()).toEqual(0);
   expect(queue.frontTop()).toBeNull();
   expect(queue.backTop()).toBeNull();
-  expect(queue.empty()).toBeTruthy();
+  expect(queue.isEmpty()).toBeTruthy();
 
   queue.addFront(str1);
   queue.addBack(str2);
   queue.addFront(str3);
 
-  expect(queue.empty()).toBeFalsy();
+  expect(queue.isEmpty()).toBeFalsy();
   expect(queue.size()).toEqual(3);
   expect(queue.frontTop()).toEqual(str3);
   expect(queue.backTop()).toEqual(str2);
@@ -25,5 +25,5 @@ it("test Deque", () => {
   expect(queue.size()).toEqual(1);
 
   queue.clear();
-  expect(queue.empty()).toBeTruthy();
+  expect(queue.isEmpty()).toBeTruthy();
 });

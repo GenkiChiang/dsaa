@@ -8,7 +8,7 @@ export class Stack<T = any> {
     this.count++;
   }
   pop(): T {
-    if (this.empty()) {
+    if (this.isEmpty()) {
       return null;
     }
     const temp = this.data[this.count - 1];
@@ -18,7 +18,7 @@ export class Stack<T = any> {
     return temp;
   }
   top(): T {
-    if (this.empty()) {
+    if (this.isEmpty()) {
       return null;
     }
     return this.data[this.count - 1];
@@ -34,7 +34,7 @@ export class Stack<T = any> {
     }
   }
 
-  empty() {
+  isEmpty() {
     return this.count === 0;
   }
 }

@@ -47,7 +47,7 @@ export class Queue<T = any> {
     this.queue[this.count++] = item;
   }
   deQueue(): T {
-    if (this.empty()) {
+    if (this.isEmpty()) {
       return null;
     }
     const temp = this.queue[this.head];
@@ -56,7 +56,7 @@ export class Queue<T = any> {
   }
 
   top(): T {
-    if (this.empty()) {
+    if (this.isEmpty()) {
       return null;
     }
 
@@ -70,7 +70,7 @@ export class Queue<T = any> {
     this.count = 0;
     this.head = 0;
   }
-  empty() {
+  isEmpty() {
     return this.length() === 0;
   }
 
