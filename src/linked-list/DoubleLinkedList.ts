@@ -1,37 +1,40 @@
-export class LinkedNode<T = any> {
+export class DoubleLinkedNode<T = any> {
   value: T = null;
-  next: LinkedNode<T> = null;
+  next: DoubleLinkedNode<T> = null;
+  prev: DoubleLinkedNode<T> = null;
 
   constructor(value: T) {
     this.value = value;
   }
 }
 
-export class LinkedList<T = any> {
-  first: LinkedNode<T> = null;
-  last: LinkedNode<T> = null; // 设置last是为了快速获取最后一个，在getLast时性能更快
+export class DoubleLinkedList<T = any> {
+  first: DoubleLinkedNode<T> = null;
+  last: DoubleLinkedNode<T> = null;
   count = 0;
 
   push(value: T) {
-    const linkedNode = new LinkedNode<T>(value);
+    const node = new DoubleLinkedNode<T>(value);
     if (this.isEmpty()) {
-      this.first = linkedNode;
-      this.last = linkedNode;
+      this.first = node;
+      this.last = node;
     } else {
-      this.last.next = linkedNode;
-      this.last = linkedNode;
+      this.last.next = node;
+      node.prev = this.last;
+      this.last = node;
     }
 
     this.count++;
   }
   unshift(value: T) {
-    const linkedNode = new LinkedNode<T>(value);
+    const node = new DoubleLinkedNode<T>(value);
     if (this.isEmpty()) {
-      this.first = linkedNode;
-      this.last = linkedNode;
+      this.first = node;
+      this.last = node;
     } else {
-      linkedNode.next = this.first;
-      this.first = linkedNode;
+      node.next = this.first;
+      this.first.prev = node;
+      this.first = node;
     }
 
     this.count++;
@@ -46,21 +49,24 @@ export class LinkedList<T = any> {
       return;
     }
 
-    const linkedNode = new LinkedNode<T>(value);
+    const node = new DoubleLinkedNode<T>(value);
     const prev = this.getAt(index - 1);
-    linkedNode.next = prev.next;
-    prev.next = linkedNode;
+    const next = prev.next;
+    prev.next = node;
+    node.next = next;
+    next.prev = node;
+    node.prev = prev;
 
     this.count++;
   }
 
-  pop(): LinkedNode<T> {
+  pop(): DoubleLinkedNode<T> {
     if (this.isEmpty()) {
       return null;
     }
     const last = this.last;
 
-    const prev = this.getAt(this.count - 2);
+    const prev = last.prev;
     if (prev === null) {
       this.first = null;
     } else {
@@ -71,7 +77,7 @@ export class LinkedList<T = any> {
     this.count--;
     return last;
   }
-  shift(): LinkedNode<T> {
+  shift(): DoubleLinkedNode<T> {
     if (this.isEmpty()) {
       return null;
     }
@@ -80,13 +86,15 @@ export class LinkedList<T = any> {
     const next = first.next;
     if (next === null) {
       this.last = null;
+    } else {
+      next.prev = null;
     }
     this.first = next;
 
     this.count--;
     return first;
   }
-  removeAt(index: number): LinkedNode<T> {
+  removeAt(index: number): DoubleLinkedNode<T> {
     if (index < 0 || this.isEmpty() || index >= this.count) {
       return null;
     }
@@ -96,27 +104,30 @@ export class LinkedList<T = any> {
     if (index === this.count - 1) {
       return this.pop();
     }
+
     const prev = this.getAt(index - 1);
     const current = prev.next;
+
     prev.next = current.next;
+    current.next.prev = prev;
 
     this.count--;
     return current;
   }
 
-  getFirst(): LinkedNode<T> {
+  getFirst(): DoubleLinkedNode<T> {
     if (this.isEmpty()) {
       return null;
     }
     return this.first;
   }
-  getLast(): LinkedNode<T> {
+  getLast(): DoubleLinkedNode<T> {
     if (this.isEmpty()) {
       return null;
     }
     return this.last;
   }
-  getAt(index: number): LinkedNode<T> {
+  getAt(index: number): DoubleLinkedNode<T> {
     if (
       typeof index !== "number" ||
       index < 0 ||

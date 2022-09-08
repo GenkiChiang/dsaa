@@ -17,8 +17,9 @@ class LinkedList {
     shift()
     removeAt()
 
-    getHead()
+    getFirst()
     getLast()
+    getAt()
 
 
     size()
