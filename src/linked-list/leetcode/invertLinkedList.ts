@@ -14,7 +14,8 @@ export const invertLinkedList = <T = any>(head: LinkedNode<T>) => {
   }
   return prev;
 };
-export const reverseList = invertLinkedList;
+// leetcode 运行测试需要的命名
+const reverseList = invertLinkedList;
 
 // 递归实现
 export const invertLinkedListBasedRecursive = <T = any>(
