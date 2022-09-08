@@ -1,11 +1,12 @@
-import { preorderForEach, TreeNode } from "../Tree";
+import type { BinaryTreeNode } from "../Tree";
+import { preorder } from "../preorder";
 
 // https://leetcode.cn/problems/binary-tree-preorder-traversal/submissions/
 
-const preorderTraversal = (root: TreeNode) => {
+const preorderTraversal = (root: BinaryTreeNode) => {
   const result = [];
 
-  preorderForEach(root, (current) => {
+  preorder(root, (current) => {
     // @ts-ignore
     result.push(current.val);
   });
