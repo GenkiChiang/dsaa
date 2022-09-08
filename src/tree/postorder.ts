@@ -1,14 +1,15 @@
 /**
  * 二叉树遍历：后序遍历
+ * 已通过测试https://leetcode.cn/problems/binary-tree-inorder-traversal/submissions/
  */
 
 // 后序遍历: 递归
 import { Stack } from "../stack";
-import { BinaryTreeNode } from "./Tree";
+import { TreeNode } from "./Tree";
 
 export const postorderForEach = (
-  root: BinaryTreeNode,
-  callback: (current: BinaryTreeNode) => void
+  root: TreeNode,
+  callback: (current: TreeNode) => void
 ) => {
   if (root === null) {
     return;
@@ -20,8 +21,8 @@ export const postorderForEach = (
 
 // 后序遍历：循环实现(翻转结果)
 export const postorderForEachLoopReverseImpl = (
-  root: BinaryTreeNode,
-  callback: (current: BinaryTreeNode) => void
+  root: TreeNode,
+  callback: (current: TreeNode) => void
 ) => {
   if (root === null) {
     return;
@@ -47,17 +48,17 @@ export const postorderForEachLoopReverseImpl = (
 
 // 后序遍历：循环实现
 export const postorderForEachLoopImpl = (
-  root: BinaryTreeNode,
-  callback: (current: BinaryTreeNode) => void
+  root: TreeNode,
+  callback: (current: TreeNode) => void
 ) => {
   if (root === null) {
     return;
   }
 
-  const stack = new Stack<BinaryTreeNode>();
+  const stack = new Stack<TreeNode>();
   stack.push(root);
   let lastPop = root;
-  let current: BinaryTreeNode;
+  let current: TreeNode;
   while (stack.size()) {
     current = stack.top();
 

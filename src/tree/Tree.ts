@@ -1,6 +1,6 @@
 // 二叉树
-export type BinaryTreeNode<T = any> = {
-  value: T;
-  left: BinaryTreeNode<T>;
-  right: BinaryTreeNode<T>;
+export type TreeNode<T = any> = {
+  val: T;
+  left: TreeNode<T>;
+  right: TreeNode<T>;
 };

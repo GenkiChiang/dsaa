@@ -1,14 +1,15 @@
 /**
  * 二叉树遍历：中序遍历
+ * 已通过测试https://leetcode.cn/problems/binary-tree-inorder-traversal/submissions/
  */
 
 // 中序遍历: 递归
 import { Stack } from "../stack";
-import { BinaryTreeNode } from "./Tree";
+import { TreeNode } from "./Tree";
 
 export const inorderForEach = (
-  root: BinaryTreeNode,
-  callback: (current: BinaryTreeNode) => void
+  root: TreeNode,
+  callback: (current: TreeNode) => void
 ) => {
   if (root === null) {
     return;
@@ -19,8 +20,8 @@ export const inorderForEach = (
 };
 // 中序遍历：循环实现
 export const inorderForEachLoopImpl = (
-  root: BinaryTreeNode,
-  callback: (current: BinaryTreeNode) => void
+  root: TreeNode,
+  callback: (current: TreeNode) => void
 ) => {
   if (root === null) {
     return;
