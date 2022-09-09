@@ -1,5 +1,5 @@
-import type { TreeNode } from "../Tree";
-import { preorder } from "../preorder";
+import { preorder } from "./preorder";
+import {TreeNode} from "./types";
 
 // https://leetcode.cn/problems/binary-tree-preorder-traversal/submissions/
 

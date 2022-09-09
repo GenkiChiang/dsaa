@@ -1,5 +1,5 @@
-import { TreeNode } from "../Tree";
-import { inorderForEach } from "../inorder";
+import { inorderForEach } from "./inorder";
+import {TreeNode} from "./types";
 // https://leetcode.cn/problems/validate-binary-search-tree/submissions/
 const dfs = (node: TreeNode, lower, upper) => {
   if (node === null) {

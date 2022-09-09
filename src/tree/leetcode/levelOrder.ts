@@ -2,8 +2,8 @@
  * 广度优先搜索算法 BFS(breadth-first search)
  */
 
-import { TreeNode } from "../Tree";
 import { Queue } from "../../queue";
+import {TreeNode} from "./types";
 
 // https://leetcode.cn/problems/binary-tree-level-order-traversal/submissions/
 export const levelOrder = (root: TreeNode) => {

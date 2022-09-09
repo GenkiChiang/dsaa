@@ -4,8 +4,8 @@
  */
 
 // 中序遍历: 递归
-import { Stack } from "../stack";
-import { TreeNode } from "./Tree";
+import { Stack } from "../../stack";
+import {TreeNode} from "./types";
 
 export const inorderForEach = (
   root: TreeNode,
