@@ -29,3 +29,4 @@ const isValidBSTInorderImpl = (node: TreeNode) => {
   });
   return isValid;
 };
+

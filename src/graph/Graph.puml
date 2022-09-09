@@ -1,0 +1,30 @@
+@startuml
+
+class Dictionary{
+dataStore []
+
+set()
+get()
+remove()
+
+keys()
+values()
+has()
+
+toString()
+size()
+isEmpty()
+clear()
+}
+
+class Graph {
+vertexes vertex[] 顶点集合
+edges adjoin[] 邻接表
+
+addVertex(vertex)
+addEdge(vertexA,vertexB)
+toString() 输出图结构，拿出二维数组的每一项
+}
+
+
+@enduml

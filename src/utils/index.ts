@@ -10,6 +10,16 @@ export const randomString = (length = random(50, false)) => {
   return compose(slice, toStringBy36, randomNumber)();
 };
 
+export const randomStringList = (length: number, stringLength: number = 10) => {
+  const stringList: string[] = [];
+  let index = 0;
+  while (index < length) {
+    index++;
+    stringList.push(randomString(length));
+  }
+  return stringList;
+};
+
 export const randomBoolean = () => !random(0, 1);
 
 export const sleep = (delay = 500) =>

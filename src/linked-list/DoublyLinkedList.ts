@@ -1,20 +1,20 @@
-export class DoubleLinkedNode<T = any> {
+export class DoublyLinkedNode<T = any> {
   value: T = null;
-  next: DoubleLinkedNode<T> = null;
-  prev: DoubleLinkedNode<T> = null;
+  next: DoublyLinkedNode<T> = null;
+  prev: DoublyLinkedNode<T> = null;
 
   constructor(value: T) {
     this.value = value;
   }
 }
 
-export class DoubleLinkedList<T = any> {
-  first: DoubleLinkedNode<T> = null;
-  last: DoubleLinkedNode<T> = null;
+export class DoublyLinkedList<T = any> {
+  first: DoublyLinkedNode<T> = null;
+  last: DoublyLinkedNode<T> = null;
   count = 0;
 
   push(value: T) {
-    const node = new DoubleLinkedNode<T>(value);
+    const node = new DoublyLinkedNode<T>(value);
     if (this.isEmpty()) {
       this.first = node;
       this.last = node;
@@ -27,7 +27,7 @@ export class DoubleLinkedList<T = any> {
     this.count++;
   }
   unshift(value: T) {
-    const node = new DoubleLinkedNode<T>(value);
+    const node = new DoublyLinkedNode<T>(value);
     if (this.isEmpty()) {
       this.first = node;
       this.last = node;
@@ -49,7 +49,7 @@ export class DoubleLinkedList<T = any> {
       return;
     }
 
-    const node = new DoubleLinkedNode<T>(value);
+    const node = new DoublyLinkedNode<T>(value);
     const prev = this.getAt(index - 1);
     const next = prev.next;
     prev.next = node;
@@ -60,7 +60,7 @@ export class DoubleLinkedList<T = any> {
     this.count++;
   }
 
-  pop(): DoubleLinkedNode<T> {
+  pop(): DoublyLinkedNode<T> {
     if (this.isEmpty()) {
       return null;
     }
@@ -77,7 +77,7 @@ export class DoubleLinkedList<T = any> {
     this.count--;
     return last;
   }
-  shift(): DoubleLinkedNode<T> {
+  shift(): DoublyLinkedNode<T> {
     if (this.isEmpty()) {
       return null;
     }
@@ -94,7 +94,7 @@ export class DoubleLinkedList<T = any> {
     this.count--;
     return first;
   }
-  removeAt(index: number): DoubleLinkedNode<T> {
+  removeAt(index: number): DoublyLinkedNode<T> {
     if (index < 0 || this.isEmpty() || index >= this.count) {
       return null;
     }
@@ -115,19 +115,19 @@ export class DoubleLinkedList<T = any> {
     return current;
   }
 
-  getFirst(): DoubleLinkedNode<T> {
+  getFirst(): DoublyLinkedNode<T> {
     if (this.isEmpty()) {
       return null;
     }
     return this.first;
   }
-  getLast(): DoubleLinkedNode<T> {
+  getLast(): DoublyLinkedNode<T> {
     if (this.isEmpty()) {
       return null;
     }
     return this.last;
   }
-  getAt(index: number): DoubleLinkedNode<T> {
+  getAt(index: number): DoublyLinkedNode<T> {
     if (
       typeof index !== "number" ||
       index < 0 ||
