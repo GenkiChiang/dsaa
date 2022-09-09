@@ -1,0 +1,17 @@
+@startuml
+'https://plantuml.com/class-diagram
+class HashTable {
+buckets
+count
+limit 质数
+
+put(key,value)
+get(key)
+remove(key)
+
+size()
+isEmpty()
+resize(value)
+}
+
+@enduml
