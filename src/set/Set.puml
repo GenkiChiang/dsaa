@@ -1,0 +1,16 @@
+@startuml
+'https://plantuml.com/class-diagram
+class Set {
+collections
+
+set()
+remove()
+
+has()
+values()
+
+size()
+clear()
+isEmpty()
+}
+@enduml

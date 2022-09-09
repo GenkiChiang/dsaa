@@ -1,4 +1,4 @@
-export class Dictionary<T = any> {
+export class Map<T = any> {
   dataStore = {};
 
   constructor() {}
@@ -10,6 +10,7 @@ export class Dictionary<T = any> {
     return this.dataStore[key];
   }
   remove(key) {
+    if (!this.has(key)) return false;
     delete this.dataStore[key];
   }
 
@@ -44,4 +45,5 @@ export class Dictionary<T = any> {
   }
 }
 
-// export const Map = Dictionary;
+export const Dictionary = Map;
+export type Dictionary = Map;

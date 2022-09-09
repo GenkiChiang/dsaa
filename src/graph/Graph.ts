@@ -1,4 +1,4 @@
-import { Dictionary } from "./Dictionary";
+import { Dictionary } from "../map";
 
 export class Graph<V = any> {
   vertexes: V[] = [];
