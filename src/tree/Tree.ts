@@ -37,7 +37,9 @@ export class BinarySearchTree {
     }
   }
 
-  remove(value) {}
+  remove(value) {
+    // TODO:
+  }
 
   //----------------------------------
   // 二叉树遍历
