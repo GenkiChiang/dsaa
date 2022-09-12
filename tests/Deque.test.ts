@@ -1,7 +1,8 @@
-import { randomString } from "../src/utils";
+import {devLog, randomString} from "../src/utils";
 import { Deque } from "../src/queue/Deque";
 
 it("test Deque", () => {
+
   const queue = new Deque();
   const [str1, str2, str3] = [randomString(), randomString(), randomString()];
 

@@ -1,9 +1,22 @@
 import { compose, random } from "lodash/fp";
+import debug from "debug";
 
-export const randomNumber = () => {
-  return random(1000_000_000, true);
+export const randomNumber = (max = 1000_000_000) => {
+  return random(max, false);
 };
 
+export const randomNumberList = (
+  length: number,
+  max: number = 1000_000_000
+) => {
+  const list: number[] = [];
+  let index = 0;
+  while (index < length) {
+    index++;
+    list.push(randomNumber(max));
+  }
+  return list;
+};
 export const randomString = (length = random(50, false)) => {
   const toStringBy36 = (value: number) => value.toString(36);
   const slice = (string: string) => string.slice(0, length);
@@ -11,13 +24,13 @@ export const randomString = (length = random(50, false)) => {
 };
 
 export const randomStringList = (length: number, stringLength: number = 10) => {
-  const stringList: string[] = [];
+  const list: string[] = [];
   let index = 0;
   while (index < length) {
     index++;
-    stringList.push(randomString(length));
+    list.push(randomString(stringLength));
   }
-  return stringList;
+  return list;
 };
 
 export const randomBoolean = () => !random(0, 1);
@@ -34,3 +47,8 @@ export const nextTick = (callback: () => void): void => {
     callback();
   }, 0);
 };
+
+debug.enable("dev:*");
+export const devLog = debug("dev:debug");
+export const devError = debug("dev:error");
+export const devInfo = debug("dev:info");

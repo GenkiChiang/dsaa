@@ -1,6 +1,6 @@
-import { defaultCompareFn } from "./defaultCompareFn";
+import { defaultCompareFn } from "./utils";
 
-const shellSort = (arr: number[], compareFn = defaultCompareFn) => {
+export const shellSort = (arr: number[], compareFn = defaultCompareFn) => {
   const length = arr.length;
   let temp,
     gap = 1,

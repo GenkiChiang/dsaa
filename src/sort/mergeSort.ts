@@ -1,21 +1,21 @@
-import { defaultCompareFn } from "./defaultCompareFn";
+import { defaultCompareFn } from "./utils";
 
-const merge = (left: number[], right: number[]) => {
+const merge = (left: number[], right: number[], compareFn) => {
   const result = [];
 
   while (left.length && right.length) {
-    if (left[0] > right[0]) {
-      result.push(right.unshift());
+    if (compareFn(left[0], right[0]) > 0) {
+      result.push(right.shift());
     } else {
-      result.push(left.unshift());
+      result.push(left.shift());
     }
   }
 
-  if (left.length) {
-    result.push(...left);
+  while (left.length) {
+    result.push(left.shift());
   }
-  if (right.length) {
-    result.push(...right);
+  while (right.length) {
+    result.push(right.shift());
   }
 
   return result;
@@ -31,5 +31,9 @@ export const mergeSort = (arr: number[], compareFn = defaultCompareFn) => {
   const left = arr.slice(0, middle);
   const right = arr.slice(middle);
 
-  return merge(mergeSort(left), mergeSort(right));
+  return merge(
+    mergeSort(left, compareFn),
+    mergeSort(right, compareFn),
+    compareFn
+  );
 };

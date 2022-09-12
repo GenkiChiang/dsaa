@@ -1,4 +1,4 @@
-import { defaultCompareFn } from "./defaultCompareFn";
+import { defaultCompareFn } from "./utils";
 
 export const selectionSort = (arr: number[], compareFn = defaultCompareFn) => {
   const length = arr.length;

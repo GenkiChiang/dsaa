@@ -1,4 +1,4 @@
-import { defaultCompareFn } from "./defaultCompareFn";
+import { defaultCompareFn } from "./utils";
 
 export const bubbleSort = (arr: number[], compareFn = defaultCompareFn) => {
   const length = arr.length;
@@ -8,7 +8,7 @@ export const bubbleSort = (arr: number[], compareFn = defaultCompareFn) => {
 
   for (i = 0; i < length - 1; i++) {
     flag = true;
-    for (j = i; j < length - 1 - i; j++) {
+    for (j = 0; j < length - 1 - i; j++) {
       if (compareFn(arr[j], arr[j + 1]) > 0) {
         [arr[j], arr[j + 1]] = [arr[j + 1], arr[j]];
         flag = false;
