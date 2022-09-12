@@ -10,6 +10,6 @@ export const defaultCompareFn = (a, b) => {
   }
   return a > b ? Compare.BIGGER_THAN : Compare.LESS_THAN;
 };
-export const swap = (arr: [], i: number, j: number) => {
+export const swap = (arr: number[], i: number, j: number) => {
   [arr[i], arr[j]] = [arr[j], arr[i]];
 };
