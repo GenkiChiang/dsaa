@@ -1,5 +1,5 @@
 import { Queue } from "../src";
-import { randomString } from "../src/utils";
+import { randomString } from "../src";
 
 it("test Queue", () => {
   const queue = new Queue();

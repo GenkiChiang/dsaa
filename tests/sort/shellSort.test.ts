@@ -1,5 +1,5 @@
-import { randomNumberList } from "../../src/utils";
-import { shellSort } from "../../src/sort/shellSort";
+import { randomNumberList } from "../../src";
+import { shellSort } from "../../src";
 
 const input = randomNumberList(20, 1_000);
 const ascOutput = [...input].sort((a, b) => a - b);

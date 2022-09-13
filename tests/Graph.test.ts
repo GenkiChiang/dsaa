@@ -1,5 +1,5 @@
-import { Graph } from "../src/graph/Graph";
-import { randomStringList } from "../src/utils";
+import { Graph } from "../src";
+import { randomStringList } from "../src";
 
 it("test Graph", () => {
   const graph = new Graph();

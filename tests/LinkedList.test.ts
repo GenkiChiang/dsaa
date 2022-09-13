@@ -1,5 +1,5 @@
 import { LinkedList } from "../src";
-import { randomString } from "../src/utils";
+import { randomString } from "../src";
 
 it("test LinkedList", () => {
   const linkedList = new LinkedList<string>();

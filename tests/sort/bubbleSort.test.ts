@@ -1,5 +1,5 @@
-import { randomNumberList } from "../../src/utils";
-import { bubbleSort } from "../../src/sort/bubbleSort";
+import { randomNumberList } from "../../src";
+import { bubbleSort } from "../../src";
 
 const input = randomNumberList(20, 1_000);
 const ascOutput = [...input].sort((a, b) => a - b);

@@ -1,5 +1,4 @@
-import { Stack } from "../src";
-import { randomNumber, randomString } from "../src/utils";
+import { randomNumber, randomString, Stack } from "../src";
 
 it("test stack", () => {
   const stack = new Stack();
