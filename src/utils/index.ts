@@ -48,6 +48,10 @@ export const nextTick = (callback: () => void): void => {
   }, 0);
 };
 
+export const _random = (min = 0, max = 1000_000_000) => {
+  return Math.floor(Math.random() * (max - min + 1)) + min;
+};
+
 debug.enable("dev:*");
 export const devLog = debug("dev:debug");
 export const devError = debug("dev:error");
